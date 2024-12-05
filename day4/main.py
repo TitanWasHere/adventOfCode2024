@@ -4,6 +4,8 @@ file_name = "input.txt"
 # Legge il file e lo salva come matrice
 with open(file_name, 'r') as file:
     matrix = [list(line.strip().replace(" ", "")) for line in file]
+    t = file.read()
+
 
 word = "XMAS"
 
@@ -37,9 +39,7 @@ def part1():
     return check_start(matrix)
 
 def check_MAS(matrix, i, j):
-    # Check bounds to avoid index errors
-    if i + 2 >= len(matrix) or j + 2 >= len(matrix[0]):
-        return 0
+
 
     # Extract relevant characters for comparison
     top_left = matrix[i][j]
